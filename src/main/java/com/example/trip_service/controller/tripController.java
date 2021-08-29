@@ -25,8 +25,11 @@ public class tripController {
         return service.findOne(id);
     }
 
+
+
+
     @GetMapping()
-    public List<Trip> findOne(@RequestParam int page, @RequestParam int size) {
+    public List<Trip> findAll(@RequestParam int page, @RequestParam int size) {
         return service.findAll(page,size);
     }
 
@@ -41,6 +44,12 @@ public class tripController {
         return service.DeleteById(id);
     }
 
+
+    @GetMapping("/customer/{id}")
+    public Trip findByCustomer(@PathVariable String id){
+        System.out.println("haha");
+        return service.findByCustomerId(id);
+    }
 
 
 }

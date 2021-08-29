@@ -42,4 +42,9 @@ public class tripServiceImpl implements tripService {
         return "Deleted!";
 
     }
+
+    @Override
+    public Trip findByCustomerId(String id) {
+        return repository.nativeFindCustomerId(id);
+    }
 }
